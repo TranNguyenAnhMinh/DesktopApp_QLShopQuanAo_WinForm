@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLShopQuanAoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="AccountName" Type="char" MaxLength="50" />
+    <Property Name="Pass" Type="char" MaxLength="30" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="1000" />
+    <Property Name="PhoneNumber" Type="char" MaxLength="500" />
+    <Property Name="Email" Type="char" MaxLength="500" />
+    <Property Name="Duty" Type="nvarchar" MaxLength="300" />
+    <Property Name="StartingDate" Type="datetime" />
+    <Property Name="Stt" Type="char" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BillDetails">
+    <Key>
+      <PropertyRef Name="BillID" />
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="BillID" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="ProductID" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="Size" Type="char" MaxLength="10" />
+    <Property Name="Color" Type="nvarchar" MaxLength="100" />
+    <Property Name="SoLuong" Type="int" />
+  </EntityType>
+  <EntityType Name="Bills">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="PartnerID" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="BillType" Type="nvarchar" MaxLength="50" />
+    <Property Name="EstablishedDate" Type="datetime" />
+    <Property Name="Stt" Type="nvarchar" MaxLength="100" />
+    <Property Name="Amount" Type="int" />
+    <Property Name="Discount" Type="float" />
+    <Property Name="Tax" Type="float" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="CateName" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Partners">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="PnName" Type="nvarchar" MaxLength="100" />
+    <Property Name="PhoneNumber" Type="int" />
+    <Property Name="Adrs" Type="nvarchar" MaxLength="100" />
+    <Property Name="Email" Type="char" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="CategoryID" Type="char" MaxLength="20" />
+    <Property Name="ProductName" Type="nvarchar" MaxLength="1000" />
+    <Property Name="ImportPrice" Type="int" />
+    <Property Name="ExportPrice" Type="int" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="100" />
+    <Property Name="Pic" Type="nvarchar" MaxLength="3000" />
+  </EntityType>
+  <EntityType Name="ProductProperties">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="ProductID" Type="char" MaxLength="20" />
+    <Property Name="Size" Type="char" MaxLength="10" />
+    <Property Name="Color" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImportNumber" Type="int" />
+    <Property Name="Remained" Type="int" />
+    <Property Name="ImportDate" Type="datetime" />
+  </EntityType>
+  <Association Name="FK__BillDetai__BillI__44FF419A">
+    <End Role="Bills" Type="Self.Bills" Multiplicity="1" />
+    <End Role="BillDetails" Type="Self.BillDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bills">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="BillDetails">
+        <PropertyRef Name="BillID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BillDetai__Produ__45F365D3">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="BillDetails" Type="Self.BillDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="BillDetails">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bills__PartnerID__4222D4EF">
+    <End Role="Partners" Type="Self.Partners" Multiplicity="1" />
+    <End Role="Bills" Type="Self.Bills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partners">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Bills">
+        <PropertyRef Name="PartnerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product__Categor__3B75D760">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProductPr__Produ__4CA06362">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="ProductProperties" Type="Self.ProductProperties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProductProperties">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLShopQuanAoModelStoreContainer">
+    <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BillDetails" EntityType="Self.BillDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bills" EntityType="Self.Bills" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Partners" EntityType="Self.Partners" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductProperties" EntityType="Self.ProductProperties" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__BillDetai__BillI__44FF419A" Association="Self.FK__BillDetai__BillI__44FF419A">
+      <End Role="Bills" EntitySet="Bills" />
+      <End Role="BillDetails" EntitySet="BillDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BillDetai__Produ__45F365D3" Association="Self.FK__BillDetai__Produ__45F365D3">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="BillDetails" EntitySet="BillDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bills__PartnerID__4222D4EF" Association="Self.FK__Bills__PartnerID__4222D4EF">
+      <End Role="Partners" EntitySet="Partners" />
+      <End Role="Bills" EntitySet="Bills" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product__Categor__3B75D760" Association="Self.FK__Product__Categor__3B75D760">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProductPr__Produ__4CA06362" Association="Self.FK__ProductPr__Produ__4CA06362">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductProperties" EntitySet="ProductProperties" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

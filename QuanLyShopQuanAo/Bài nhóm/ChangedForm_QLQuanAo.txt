@@ -1,0 +1,13 @@
+-frmDangNhap: giữ nguyên
+-frmQuanLyKhoHangHoa: 
+	+ [category] áo, quần, giày, phụ kiện
+	+ datagirdview: để show tất cả các mặt hàng đang có trong kho khi loadform
+	+ txtbox tìm và btnTim, radio button mã sp, tên sp: để tìm theo tên, mã và hiển thị trên datagridview 
+	
+
+-frmQuanLyNhapHang:ID,ProductCategoryID,Name
+Price,Unit,Size,Color,Number, Remained
+
+	+Mã hàng [label], txtMaHang[textbox]
+	[tương tự như trên cho các phần từ bên dưới]
+	+Mã ọao

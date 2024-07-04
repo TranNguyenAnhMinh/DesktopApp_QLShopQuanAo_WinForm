@@ -1,0 +1,12 @@
+linq:
+- cố gắng thao tác và lấy dữ liệu từ server truyền lên luôn chứ không phải lấy hết lên rồi mớit hao tác với nó, vì sẽ làm chậm quá trình truy vấn, nặng bộ nhớ
+
+entity framework:
+//
+#region methods ======= #endregion
+#region events ======= #endregion
+
+- quyền truy cạp được set ở các func FormLoad
+READ MS.NGA SOURCE CODE:
+- adminFormLoad
+- loginform

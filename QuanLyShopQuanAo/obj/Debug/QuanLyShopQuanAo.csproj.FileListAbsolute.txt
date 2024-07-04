@@ -1,0 +1,49 @@
+D:\LEARN\Đồ án Desktop\QuanLyShopQuanAo\bin\Debug\QuanLyShopQuanAo.exe.config
+D:\LEARN\Đồ án Desktop\QuanLyShopQuanAo\bin\Debug\QuanLyShopQuanAo.exe
+D:\LEARN\Đồ án Desktop\QuanLyShopQuanAo\bin\Debug\QuanLyShopQuanAo.pdb
+D:\LEARN\Đồ án Desktop\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.csproj.AssemblyReference.cache
+D:\LEARN\Đồ án Desktop\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.csproj.SuggestedBindingRedirects.cache
+D:\LEARN\Đồ án Desktop\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.Properties.Resources.resources
+D:\LEARN\Đồ án Desktop\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.csproj.GenerateResource.cache
+D:\LEARN\Đồ án Desktop\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.csproj.CoreCompileInputs.cache
+D:\LEARN\Đồ án Desktop\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.exe
+D:\LEARN\Đồ án Desktop\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.pdb
+D:\LEARN\Đồ án Desktop\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.frmDangNhap.resources
+D:\LEARN\Đồ án Desktop\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.frmQuanLyKhoHang.resources
+D:\LEARN\Đồ án Desktop\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.frmQuanLyBanHang.resources
+D:\Giải Trí\GitHub\QuanLyShopQuanAo\bin\Debug\QuanLyShopQuanAo.exe.config
+D:\Giải Trí\GitHub\QuanLyShopQuanAo\bin\Debug\QuanLyShopQuanAo.exe
+D:\Giải Trí\GitHub\QuanLyShopQuanAo\bin\Debug\QuanLyShopQuanAo.pdb
+D:\Giải Trí\GitHub\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.csproj.AssemblyReference.cache
+D:\Giải Trí\GitHub\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.frmDangNhap.resources
+D:\Giải Trí\GitHub\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.frmChiTietDonHang.resources
+D:\Giải Trí\GitHub\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.frmDoanhThu.resources
+D:\Giải Trí\GitHub\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.frmQuanLyBanHang.resources
+D:\Giải Trí\GitHub\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.frmQuanLyKhoHang.resources
+D:\Giải Trí\GitHub\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.frmXemHoaDon.resources
+D:\Giải Trí\GitHub\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.Properties.Resources.resources
+D:\Giải Trí\GitHub\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.csproj.GenerateResource.cache
+D:\Giải Trí\GitHub\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.csproj.CoreCompileInputs.cache
+D:\Giải Trí\GitHub\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.exe
+D:\Giải Trí\GitHub\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.pdb
+D:\Data\homework\Desktop app\Bài nhóm\QuanLyShopQuanAo\bin\Debug\QuanLyShopQuanAo.exe.config
+D:\Data\homework\Desktop app\Bài nhóm\QuanLyShopQuanAo\bin\Debug\QuanLyShopQuanAo.exe
+D:\Data\homework\Desktop app\Bài nhóm\QuanLyShopQuanAo\bin\Debug\QuanLyShopQuanAo.pdb
+D:\Data\homework\Desktop app\Bài nhóm\QuanLyShopQuanAo\bin\Debug\EntityFramework.dll
+D:\Data\homework\Desktop app\Bài nhóm\QuanLyShopQuanAo\bin\Debug\EntityFramework.SqlServer.dll
+D:\Data\homework\Desktop app\Bài nhóm\QuanLyShopQuanAo\bin\Debug\EntityFramework.xml
+D:\Data\homework\Desktop app\Bài nhóm\QuanLyShopQuanAo\bin\Debug\EntityFramework.SqlServer.xml
+D:\Data\homework\Desktop app\Bài nhóm\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.csproj.AssemblyReference.cache
+D:\Data\homework\Desktop app\Bài nhóm\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.csproj.SuggestedBindingRedirects.cache
+D:\Data\homework\Desktop app\Bài nhóm\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.frmDangNhap.resources
+D:\Data\homework\Desktop app\Bài nhóm\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.frmChiTietDonHang.resources
+D:\Data\homework\Desktop app\Bài nhóm\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.frmDoanhThu.resources
+D:\Data\homework\Desktop app\Bài nhóm\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.frmQuanLyBanHang.resources
+D:\Data\homework\Desktop app\Bài nhóm\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.frmQuanLyNhapHang.resources
+D:\Data\homework\Desktop app\Bài nhóm\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.frmXemHoaDon.resources
+D:\Data\homework\Desktop app\Bài nhóm\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.Properties.Resources.resources
+D:\Data\homework\Desktop app\Bài nhóm\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.csproj.GenerateResource.cache
+D:\Data\homework\Desktop app\Bài nhóm\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.csproj.CoreCompileInputs.cache
+D:\Data\homework\Desktop app\Bài nhóm\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.csproj.CopyComplete
+D:\Data\homework\Desktop app\Bài nhóm\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.exe
+D:\Data\homework\Desktop app\Bài nhóm\QuanLyShopQuanAo\obj\Debug\QuanLyShopQuanAo.pdb

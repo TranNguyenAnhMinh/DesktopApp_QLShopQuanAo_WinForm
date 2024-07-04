@@ -1,0 +1,177 @@
+create database QLShopQuanAo;
+go
+use QLShopQuanAo;
+go
+create table Account
+(
+ID char(20) primary key,
+AccountName char(50),
+Pass char(30),
+FullName nvarchar(1000),
+PhoneNumber char(500),
+Email char(500),
+CreatedDate datetime
+);
+go
+create table AccountRole
+(
+ ID char(20) primary key,
+ AccountID char(20),
+ RoleName nvarchar(500),
+ Dir nvarchar(3000),
+ Stt nvarchar(100),
+ Notes nvarchar(4000) NULL
+ foreign key (AccountID) references Account (ID)
+);
+ go
+ create table Category
+ (
+ ID char(20) primary key,
+ Name nvarchar(100)
+ );
+ go
+  create table Product
+  (
+  ID char(20) PRIMARY key,
+  CategoryID char(20),
+  Name nvarchar(1000),
+  Price int,
+  Unit nvarchar(100),
+  Pic nvarchar(3000),
+  FOREIGN key (CategoryID) references Category(ID),
+
+  );
+  go
+create table ProductProperties
+ (
+ ProductID char(20) primary key,
+ Size char(10),
+ Color nvarchar(100),
+ Remained int,
+ FOREIGN key (ProductID) references Product(ID)
+ );
+ go
+
+CREATE TABLE Bills
+(
+	ID char(20) PRIMARY KEY,
+	BillType char(2),
+	EstablishedDate datetime,
+	Stt nvarchar(100),
+	Amount int,
+	Discount float,
+	Tax float
+	
+)
+GO
+
+CREATE TABLE PartnerTypes
+(
+	ID char(20),
+	PartnerType char(20),
+
+	PRIMARY KEY (ID)
+)
+GO
+
+CREATE TABLE Partners
+(
+	ID char(20),
+	PartnerTypeID char(20),
+	PnName nvarchar(100),
+	DOB datetime,
+	PhoneNumber int,
+	Adrs nvarchar(100),
+	Email char(500) NULL,
+
+	FOREIGN KEY (PartnerTypeID) REFERENCES PartnerTypes(ID),
+	PRIMARY KEY (ID)
+)
+GO
+
+CREATE TABLE BillDetails
+(
+	BillID char(20),
+	PartnerID char(20),
+	ProductID char(20),
+	Price int,
+	Number int,
+
+	FOREIGN KEY (BillID) references Bills(ID),
+	FOREIGN KEY (PartnerID) references Partners(ID),
+	FOREIGN KEY (ProductID) references Product(ID),
+	PRIMARY KEY (BillID, PartnerID, ProductID)
+)
+GO
+
+--==================================== Nhập dữ liệu cho các bảng ============================================
+ -- F là chủ, E là đầy tớ
+ SET DATEFORMAT dmy;
+ insert into Account(ID,AccountName,Pass,FullName,PhoneNumber,Email,CreatedDate) Values('F001','tnam','0123456789',N'Trần Nguyễn Ánh Minh','0327764821','trannguyenanhminh2003@gamil.com','20/4/2023')
+ insert into Account(ID,AccountName,Pass,FullName,PhoneNumber,Email,CreatedDate) Values('E001','dtqn','123123123',N'Đặng Thị Quỳnh Như','0327764821','dangthiquynhnhu@gamil.com','13/4/2023')
+ insert into Account(ID,AccountName,Pass,FullName,PhoneNumber,Email,CreatedDate) Values('E002','ntn','66666666',N'Nguyễn Thanh Nhã','0327764821','nguyenthanhnha@gamil.com','30/4/2023')
+
+ -- 00 là chủ , 01 là người hầu
+ insert into AccountRole(ID,AccountID,RoleName,Dir,Stt,Notes)values('00','F001',N'Founder',NULL,'Active',NULL)
+ insert into AccountRole(ID,AccountID,RoleName,Dir,Stt,Notes)values('01','E001',N'Employee',NULL,'Active',NULL)
+ insert into AccountRole(ID,AccountID,RoleName,Dir,Stt,Notes)values('01','E002',N'Employee',NULL,'Active',NULL)
+ -- 01 Áo, -02 Quần
+ insert into Category(ID,Name) values('01',N'Áo')
+ insert into Category(ID,Name) values('02',N'Quần')
+  
+
+ insert into Product(ID,CategoryID,Name,Price,Unit,Pic) values('AO001','01',N'Áo Thun Trơn màu Trắng',199000,'VND',N'/image/Áo/AO001')
+ insert into Product(ID,CategoryID,Name,Price,Unit,Pic) values('AO101','01',N'Áo Hello Kitty Siêu Cute',199000,'VND',N'/image/Áo/AO101')
+ insert into Product(ID,CategoryID,Name,Price,Unit,Pic) values('AO201','01',N'Áo in hình Triết lý cuộc sống',199000,'VND',N'/image/Áo/AO201')
+ insert into Product(ID,CategoryID,Name,Price,Unit,Pic) values('QN001','02',N'Quần trơn',199000,'VND',N'/image/Quần/QN001')
+ insert into Product(ID,CategoryID,Name,Price,Unit,Pic) values('QN101','02',N'Quần Hello Kitty Siêu Cute',199000,'VND',N'/image/Quần/QN101')
+
+ insert into ProductProperties(ProductID,Size,Color,Remained) values ('AO001','XL',N'Trắng',10)
+ insert into ProductProperties(ProductID,Size,Color,Remained) values ('AO001','M',N'Trắng',21)
+ insert into ProductProperties(ProductID,Size,Color,Remained) values ('AO001','L',N'Trắng',0)
+ insert into ProductProperties(ProductID,Size,Color,Remained) values ('AO001','S',N'Trắng',3)
+ insert into ProductProperties(ProductID,Size,Color,Remained) values ('AO001','XL',N'Đen',10)
+ insert into ProductProperties(ProductID,Size,Color,Remained) values ('AO001','M',N'Đen',21)
+ insert into ProductProperties(ProductID,Size,Color,Remained) values ('AO001','L',N'Đen',0)
+ insert into ProductProperties(ProductID,Size,Color,Remained) values ('AO001','S',N'Đen',3)
+ --nếu nó như này thì mỗi cái ProductProperties biểu thị số lượng tồn của 1 size của mỗi màu của item đó
+
+--Nhập bảng Bills
+INSERT INTO Bills(ID, BillType,	EstablishedDate, Stt, Amount, Discount,	Tax) VALUES ('X0001', N'Xuất', 10/03/2022, N'Đã Hoàn Thành', 500000, 3, 20000)
+INSERT INTO Bills(ID, BillType,	EstablishedDate, Stt, Amount, Discount,	Tax) VALUES ('N0001', N'Nhập', 21/10/2023, N'Đã Hoàn Thành', 200000, 0, 0)
+INSERT INTO Bills(ID, BillType,	EstablishedDate, Stt, Amount, Discount,	Tax) VALUES ('X0002', N'Xuất', 20/08/2020, N'Chưa Hoàn Thành', 300000, 0, 0)
+INSERT INTO Bills(ID, BillType,	EstablishedDate, Stt, Amount, Discount,	Tax) VALUES ('N0002', N'Nhập', 18/04/2023, N'Chưa Hoàn Thành', 500000, 3, 5000)
+INSERT INTO Bills(ID, BillType,	EstablishedDate, Stt, Amount, Discount,	Tax) VALUES ('N0003', N'Nhập', 09/12/2021, N'Đã Hoàn Thành', 900000, 5, 45000)
+
+--Nhập bảng PartnerTypes
+INSERT INTO PartnerTypes(ID, PartnerType) VALUES ('01',N'Nhà Cung Cấp')
+INSERT INTO PartnerTypes(ID, PartnerType) VALUES ('01',N'Nhà Cung Cấp')
+INSERT INTO PartnerTypes(ID, PartnerType) VALUES ('02',N'Khách Hàng')
+INSERT INTO PartnerTypes(ID, PartnerType) VALUES ('02',N'Khách Hàng')
+INSERT INTO PartnerTypes(ID, PartnerType) VALUES ('01',N'Nhà Cung Cấp')
+
+--Nhập bảng Partners
+INSERT INTO Partners(ID, PartnerTypeID, PnName, DOB, PhoneNumber, Adrs, Email) VALUES ('NCC001', '01', N'Nguyễn Huy Hoàng', 23/07/2003, 0335242576, N'36 Phạm Văn Đồng - Nha Trang', 'hoangnh@gmail.com')
+INSERT INTO Partners(ID, PartnerTypeID, PnName, DOB, PhoneNumber, Adrs, Email) VALUES ('NCC002', '01',N'Lý Ngọc Dũng', 14/11/2000, 0932656412, N'An Lộc - Tp.Huế', 'dungln@gmail.com')
+INSERT INTO Partners(ID, PartnerTypeID, PnName, DOB, PhoneNumber, Adrs, Email) VALUES ('KH001', '02',N'Nguyễn Hoài Nam', 23/05/1997, 0378654232, N'Thủ Đức - Tp.Hồ Chí Minh', 'namnh@gmail.com')
+INSERT INTO Partners(ID, PartnerTypeID, PnName, DOB, PhoneNumber, Adrs, Email) VALUES ('KH002', '02',N'Phạm Ngọc Dung', 06/02/2002, 0235786235, N'Tp.Đà Lạt - Lâm Đồng', 'dungpn@gmail.com')
+INSERT INTO Partners(ID, PartnerTypeID, PnName, DOB, PhoneNumber, Adrs, Email) VALUES ('NCC003', '01',N'Trịnh Bá Hổ', 09/12/2001, 0942968505, N'P2 - Tp.Cà Mau', 'hotb@gmail.com')
+
+--Nhập bảng BillDetails
+INSERT INTO BillDetails(BillID, PartnerID, ProductID, Price, Number) VALUES ('X0001', 'NCC001', 'SP001', 500000, 10)
+INSERT INTO BillDetails(BillID, PartnerID, ProductID, Price, Number) VALUES ('N0001', 'NCC002', 'SP002', 200000, 45)
+INSERT INTO BillDetails(BillID, PartnerID, ProductID, Price, Number) VALUES ('X0002', 'KH001', 'SP003', 300000, 30)
+INSERT INTO BillDetails(BillID, PartnerID, ProductID, Price, Number) VALUES ('N0002', 'KH002', 'SP004', 500000, 15)
+INSERT INTO BillDetails(BillID, PartnerID, ProductID, Price, Number) VALUES ('N0003', 'NCC003', 'SP005', 900000, 5)
+
+
+ select * from Account
+ select * from AccountRole
+ select * from Category
+ select * from Product
+ select * from ProductProperties
+
+ select * from Bills
+ select * from PartnerTypes
+ select * from Partners
+ select * from BillDetails

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a4af820939014dd09844a2ac7ff96fb6" Name="Diagram1">
+        <EntityTypeShape EntityType="QLShopQuanAoModel.Account" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLShopQuanAoModel.BillDetail" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLShopQuanAoModel.Bill" Width="1.5" PointX="3" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLShopQuanAoModel.Category" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLShopQuanAoModel.Partner" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLShopQuanAoModel.Product" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLShopQuanAoModel.ProductProperty" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="QLShopQuanAoModel.FK__BillDetai__BillI__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="QLShopQuanAoModel.FK__BillDetai__Produ__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="QLShopQuanAoModel.FK__Bills__PartnerID__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="QLShopQuanAoModel.FK__Product__Categor__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="QLShopQuanAoModel.FK__ProductPr__Produ__4CA06362" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
